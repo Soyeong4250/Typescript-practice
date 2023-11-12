@@ -1,7 +1,13 @@
-let todoItems: { id: number; title: string; done: boolean }[];
+interface Todo {
+  id: number;
+  title: string;
+  done: boolean;
+}
+
+let todoItems: Todo[];
 
 // api
-function fetchTodoItems(): { id: number; title: string; done: boolean }[] {
+function fetchTodoItems(): Todo[] {
   const todos = [
     { id: 1, title: '안녕', done: false },
     { id: 2, title: '타입', done: false },
@@ -11,12 +17,12 @@ function fetchTodoItems(): { id: number; title: string; done: boolean }[] {
 }
 
 // crud methods
-function fetchTodos(): { id: number; title: string; done: boolean }[] {
+function fetchTodos(): Todo[] {
   const todos = fetchTodoItems();
   return todos;
 }
 
-function addTodo(todo: { id: number; title: string; done: boolean }): void {
+function addTodo(todo: Todo): void {
   todoItems.push(todo);
 }
 
@@ -26,18 +32,18 @@ function deleteTodo(index: number): void {
 
 function completeTodo(
   index: number, 
-  todo: { id: number; title: string; done: boolean }
+  todo: Todo
 ): void {
   todo.done = true;
   todoItems.splice(index, 1, todo);
 }
 
 // business logic
-function logFirstTodo(): { id: number; title: string; done: boolean } {
+function logFirstTodo(): Todo {
   return todoItems[0];
 }
 
-function showCompleted(): { id: number; title: string; done: boolean }[] {
+function showCompleted(): Todo[] {
   return todoItems.filter(item => item.done);
 }
 
