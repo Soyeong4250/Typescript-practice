@@ -1,4 +1,4 @@
-let todoItems;
+let todoItems: { id: number; title: string; done: boolean }[];
 
 // api
 function fetchTodoItems(): { id: number; title: string; done: boolean }[] {
