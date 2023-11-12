@@ -16,25 +16,28 @@ function fetchTodos(): { id: number; title: string; done: boolean }[] {
   return todos;
 }
 
-function addTodo(todo: any): void {
+function addTodo(todo: { id: number; title: string; done: boolean }): void {
   todoItems.push(todo);
 }
 
-function deleteTodo(index: any): void {
+function deleteTodo(index: number): void {
   todoItems.splice(index, 1);
 }
 
-function completeTodo(index: any, todo: any): void {
+function completeTodo(
+  index: number, 
+  todo: { id: number; title: string; done: boolean }
+): void {
   todo.done = true;
   todoItems.splice(index, 1, todo);
 }
 
 // business logic
-function logFirstTodo(): any {
+function logFirstTodo(): { id: number; title: string; done: boolean } {
   return todoItems[0];
 }
 
-function showCompleted(): any {
+function showCompleted(): { id: number; title: string; done: boolean }[] {
   return todoItems.filter(item => item.done);
 }
 
