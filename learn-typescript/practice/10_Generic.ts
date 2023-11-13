@@ -40,3 +40,11 @@ interface Dropdown<T> {
 var product: Dropdown<string>;
 var stock: Dropdown<number>;
 var address: Dropdown<{ city: string; zipCode: string }>;
+
+// 특정 조건을 갖는 타입만 제약
+function lengthOnly<T extends {length: number}>(value: T) {
+  return value.length;
+}
+
+lengthOnly({ title: 'abc', length: 123 });
+// lengthOnly(100);  // 에러 발생
