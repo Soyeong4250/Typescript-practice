@@ -21,7 +21,7 @@ var myString = getText<string>('hi');
 var myNumber = getText<number>(30);
 
 // 4. 인터페이스 객체에 제네릭 사용
-interface ProductDropdown {
+/* interface ProductDropdown {
   value: string;
   selected: boolean;
 }
@@ -29,4 +29,14 @@ interface ProductDropdown {
 interface StockDropdown {
   value: number;
   selected: boolean;
+} */
+
+interface Dropdown<T> {
+  value: T;
+  selected: boolean;
 }
+
+// 드롭 다운 유형별로 하나의 제네릭 인터페이스를 연결
+var product: Dropdown<string>;
+var stock: Dropdown<number>;
+var address: Dropdown<{ city: string; zipCode: string }>;
