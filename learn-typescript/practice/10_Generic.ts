@@ -8,6 +8,14 @@ function getNumber(text: number): number {
 } */
 
 // 2. any를 사용하면 되지 않을까?
-function getText(text: any): any {
+/* function getText(text: any): any {
+  return text;
+} */
+
+// 3. 제네릭 사용
+function getText<T>(text: T): T {
   return text;
 }
+
+var myString = getText<string>('hi');
+var myNumber = getText<number>(30);
