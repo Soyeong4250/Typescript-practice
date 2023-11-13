@@ -1,5 +1,5 @@
 class WaterPurifier {
-  waterAmount: number;
+  private waterAmount: number;
 
   constructor(waterAmount: number) {
     this.waterAmount = waterAmount;
@@ -15,5 +15,5 @@ class WaterPurifier {
 var purifier = new WaterPurifier(30);
 purifier.wash();  // 정수기 동작 성공
 
-purifier.waterAmount = 0;  // 의도치않은 오염
-purifier.wash();  // 동작 x
+// purifier.waterAmount = 0;  // 에러 발생
+purifier.wash();  // 정수기 동작 성공
