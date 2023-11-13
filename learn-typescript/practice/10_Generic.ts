@@ -19,3 +19,14 @@ function getText<T>(text: T): T {
 
 var myString = getText<string>('hi');
 var myNumber = getText<number>(30);
+
+// 4. 인터페이스 객체에 제네릭 사용
+interface ProductDropdown {
+  value: string;
+  selected: boolean;
+}
+
+interface StockDropdown {
+  value: number;
+  selected: boolean;
+}
