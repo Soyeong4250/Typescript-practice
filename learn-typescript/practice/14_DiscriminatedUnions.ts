@@ -1,6 +1,6 @@
 interface Person {
   name: string;
-  age: string;
+  age: number;
   industry: 'common';
 }
 
