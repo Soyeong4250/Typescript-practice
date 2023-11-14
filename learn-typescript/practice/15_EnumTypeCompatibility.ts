@@ -7,3 +7,13 @@ enum Language {
 var a:number = 10;
 a = Language.C;
 console.log(a);  // 0
+
+
+enum Programming {
+  C,
+  Java, 
+  TypeScript,
+}
+
+var langC: Language.C;
+langC = Programming.C;  // 에러
