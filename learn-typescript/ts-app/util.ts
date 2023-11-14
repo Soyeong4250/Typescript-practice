@@ -1,5 +1,5 @@
 var num = 10;
 
-type Person = {
+interface Person {
   name: string;
 }
