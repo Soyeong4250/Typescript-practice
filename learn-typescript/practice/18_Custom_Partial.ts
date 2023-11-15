@@ -3,6 +3,16 @@ interface Todo {
     title: string;
 }
 
-type MyPartial = {
-    [Property in keyof Todo]?: Todo[Property];
+interface Student {
+  name: string;
+  grade: number;
+}
+
+type MyPartial<Type> = {
+  [Property in keyof Type]?: Type[Property];
 };
+
+type TodoPartial = MyPartial<Todo>;
+type StudentPartial = MyPartial<Student>;
+
+type TodoPartial2 = Partial<Todo>;
